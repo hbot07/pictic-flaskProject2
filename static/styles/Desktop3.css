@@ -1,0 +1,264 @@
+.desktop-3-child,
+.untitled-1-2 {
+  position: absolute;
+  top: 98px;
+  left: 1174px;
+  width: 81px;
+  height: 32px;
+}
+.untitled-1-2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 39px;
+  left: 36px;
+  border-radius: var(--br-11xl);
+  width: 178px;
+  height: 178px;
+  background-image: url(public/untitled12@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.frame-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-27xl);
+  background-color: var(--color-cadetblue-100);
+  width: 540px;
+  height: 75px;
+}
+.e-mail-id {
+  border: 0;
+  background-color: rgba(136, 189, 188, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-27xl);
+  width: 541px;
+  height: 75px;
+}
+.rectangle-parent {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 562px;
+  left: 433px;
+  width: 540px;
+  height: 75px;
+}
+.username {
+  border: 0;
+  background-color: rgba(136, 189, 188, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-27xl);
+  width: 541px;
+  height: 75px;
+  
+}
+.rectangle-group {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 460px;
+  left: 433px;
+  width: 540px;
+  height: 75px;
+}
+.name {
+  border: 0;
+  background-color: rgba(136, 189, 188, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-27xl);
+  width: 541px;
+  height: 75px;
+}
+.rectangle-container {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 356px;
+  left: 433px;
+  width: 540px;
+  height: 75px;
+}
+.password {
+  border: 0;
+  background-color: rgba(136, 189, 188, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-27xl);
+  width: 541px;
+  height: 75px;
+}
+.frame-button,
+.home1,
+.login1,
+.signup1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 664px;
+  left: 433px;
+  width: 540px;
+  height: 75px;
+}
+.home1,
+.login1,
+.signup1 {
+  top: 57px;
+  left: 997px;
+  font-size: var(--font-size-41xl);
+  font-weight: 800;
+  font-family: var(--font-inter);
+  color: var(--color-cadetblue-100);
+  text-align: left;
+  display: inline-block;
+  width: 174px;
+  height: 73px;
+}
+.home1,
+.signup1 {
+  left: 1215px;
+  width: 226px;
+}
+.home1 {
+  left: 748px;
+  width: 174px;
+}
+.create-your-free {
+  position: absolute;
+  top: 217px;
+  left: 408px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 651px;
+  height: 66px;
+}
+.frame-child1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-27xl);
+  background-color: var(--color-darksalmon);
+  width: 322px;
+  height: 75px;
+}
+.get-started {
+  position: absolute;
+  top: 16px;
+  left: 32px;
+  font-size: var(--font-size-26xl);
+  font-weight: 800;
+  font-family: var(--font-inter);
+  color: var(--color-maroon);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 269px;
+  height: 42px;
+}
+.rectangle-parent1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 774px;
+  left: 543px;
+  width: 322px;
+  height: 75px;
+}
+.already-have-an {
+  position: absolute;
+  top: 881px;
+  left: 444px;
+  font-size: var(--font-size-16xl);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  width: 447px;
+  height: 57px;
+}
+.frame-child2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-27xl);
+  background-color: var(--color-darksalmon);
+  width: 114px;
+  height: 47px;
+}
+.login2 {
+  position: absolute;
+  top: 5px;
+  left: 17px;
+  font-size: var(--font-size-11xl);
+  font-weight: 800;
+  font-family: var(--font-inter);
+  color: var(--color-maroon);
+  text-align: left;
+}
+.rectangle-parent2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 886px;
+  left: 921px;
+  width: 114px;
+  height: 47px;
+}
+.desktop-3 {
+  position: relative;
+  background-color: var(--color-darkslategray);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 50px;
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+
+input {
+  border: #000;
+  padding-left: 17px;
+  font-size: var(--font-size-11xl);
+  width: 100%;
+}
+
+input::placeholder {
+  position: absolute;
+  top: 20px;
+  left: 17px;
+  font-size: var(--font-size-11xl);
+  display: flex;
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+  align-items: center;
+  width: 391px;
+  height: 58px;
+}
+input {
+  font-family: sans-serif;
+}
+

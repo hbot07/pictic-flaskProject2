@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-kite-one: "Kite One";
+  --font-inter: Inter;
+  --font-roboto: Roboto;
+
+  /* font sizes */
+  --font-size-61xl: 80px;
+  --font-size-41xl: 60px;
+  --font-size-11xl: 30px;
+  --font-size-mini: 15px;
+  --font-size-3xs: 10px;
+  --font-size-6xl: 25px;
+  --font-size-xl: 20px;
+
+  /* Colors */
+  --color-darkslategray-100: #112d32;
+  --color-cadetblue: #88bdbc;
+
+  /* border radiuses */
+  --br-11xl: 30px;
+}

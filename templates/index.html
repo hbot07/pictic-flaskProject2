@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="../static/styles/global.css" />
+    <link rel="stylesheet" href="../static/styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kite One:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1">
+      <div class="pictic-is-a">
+        Pictic is a web-based platform that offers image hosting and sharing
+        services. It is accessible through any web browser and requires users to
+        create an account before using its services. Upon registration, users
+        are asked to select their interests, which are used to tailor the
+        content displayed on their homepage.
+      </div>
+      <img class="desktop-1-child" alt="" src="../static/styles/public/group-34@2x.png" />
+      <div class="home-parent">
+        <button class="home">Home</button>
+        
+        <button class="login" id="loginbutton">Login</button>
+      </div>
+      <img
+        class="untitled-1-2-icon"
+        alt=""
+        src="../static/styles/public/untitled1-2@2x.png"
+      />
+      <button class="signup" , id="signupbutton">Signup</button>
+      
+      <div class="about-us">
+        <p class="about"><span>ABOUT</span><span class="span"> </span></p>
+        <p class="us">US</p>
+      </div>
+      <div class="pictic">Pictic</div>
+    </div>
+
+    <script>
+      var signupbutton = document.getElementById("signupbutton");
+      if (signupbutton) {
+        signupbutton.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('signup') }}";
+        });
+      }
+
+      var loginbutton = document.getElementById("loginbutton");
+      if (loginbutton) {
+        loginbutton.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('login') }}";
+        });
+      }
+      
+    </script>
+  </body>
+</html>

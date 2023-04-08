@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="../static/styles/global.css" />
+    <link rel="stylesheet" href="../static/styles/Desktop2.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kite One:wght@400&display=swap"
+    />
+      <title>Login</title>
+  </head>
+  <body>
+    <div class="desktop-2">
+      <button class="untitled-1-21" id="untitled12"></button>
+    <form action="" method="post">
+      <button class="desktop-2-inner" type="button">
+        <div class="frame-div">
+          <input
+            class="rectangle-input"
+            type="text"
+            placeholder="Username"
+            name="username"
+            value="{{ request.form.username }}"
+          />
+        </div></button>
+
+      <button class="desktop-2-child" type="button">
+        <div class="frame-input">
+            <input class="rectangle-input" type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}" />
+        </div></button>
+
+
+        <button class="login3" type="button">Login</button>
+
+      <button class="signup2" id="Signupbutton" type="button">Signup</button>
+
+
+      <button class="home2" id="homebutton" type="button">Home</button>
+
+      <button class="rectangle-parent3" id="frameButton2" type="submit">
+        <div class="frame-child3"></div>
+        <div class="login4">Login</div>
+      </button>
+    </form>
+        {% if error %}
+        <script> window.alert("{{ error }}"); </script>
+        {% endif %}
+      <div class="dont-have-an">Don’t have an account yet?</div>
+      <button class="vector-parent">
+        <img class="rectangle-icon" alt="" src="../static/styles/public/rectangle-34.svg" />
+        <div class="continue-with-google">Continue with Google</div>
+        <img
+          class="icon"
+          alt=""
+          src="../static/styles/public/14906128581553664906128-1@2x.png"
+        />
+
+        </button
+      >
+      <button class="vector-group" id="frameButton4">
+        <img class="frame-child4" alt="" src="../static/styles/public/rectangle-35.svg" />
+        <div class="create-an-account">Create an account</div>
+      </button>
+    </div>
+
+    <script>
+      var untitled12 = document.getElementById("untitled12");
+      if (untitled12) {
+        untitled12.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('hello_world') }}";
+        });
+      }
+
+      var frameButton2 = document.getElementById("frameButton2");
+      if (frameButton2) {
+        frameButton2.addEventListener("click", function (e) {
+        });
+      }
+
+      var Signupbutton = document.getElementById("Signupbutton");
+      if (Signupbutton) {
+        Signupbutton.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('signup') }}";
+        });
+      }
+
+      var homebutton = document.getElementById("homebutton");
+      if (homebutton) {
+        homebutton.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('hello_world') }}";
+        });
+      }
+
+
+
+      var frameButton4 = document.getElementById("frameButton4");
+      if (frameButton4) {
+        frameButton4.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('signup') }}";
+        });
+      }
+      </script>
+  </body>
+</html>

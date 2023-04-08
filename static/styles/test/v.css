@@ -1,0 +1,38 @@
+.container{
+    font-size: 40px;
+    width: 50%;
+    text-align:center;
+  padding-top: 10px;
+    font-weight: bold;
+      float:left;
+    cursor:pointer;
+  }
+  .hover-1:hover{
+    color:red;
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    transition: font-size 0.3s ease-out;
+  }
+  .hover-2:hover{
+    color:#00FFFF;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    transition:  color 0.5s ease-in;
+  }
+  
+  .hover-3:hover{
+    color:#25316D;
+    background-color:#B1B2FF;
+    border-radius: 20px;
+    transition:  all 0.5s ease-in;
+  }
+  
+  
+  .hover-4:hover{
+    text-shadow: 2px 2px 8px #FF0000;
+    border: 2px solid #A5F1E9;
+    border-radius: 20px;
+    color: #A5F1E9;
+    transition:  all 0.2s ease-in;
+  }

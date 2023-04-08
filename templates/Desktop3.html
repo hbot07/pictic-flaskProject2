@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width"/>
+    <link rel="stylesheet" href="../static/styles/global.css"/>
+    <link rel="stylesheet" href="../static/styles/Desktop3.css"/>
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Kite One:wght@400&display=swap"
+    />
+</head>
+<body>
+<form action="{{ url_for('signup') }}" method="post">
+<div class="desktop-3">
+    <div class="desktop-3-child"></div>
+    <button class="untitled-1-2" id="untitled12" type="button"></button>
+
+    <button class="rectangle-parent" type="button">
+        <div class="frame-child">
+            <input class="e-mail-id" type="text" placeholder="Email" id="email" name="email"/></div>
+    </button>
+
+    <button class="rectangle-group" type="button">
+        <div class="frame-child">
+            <input class="username" type="text" placeholder="Username" id="username" name="username"/></div>
+    </button>
+
+    <button class="rectangle-container" type="button">
+        <div class="frame-child">
+            <input class="name" type="text " placeholder="Name" id="name" name="name"/></div>
+    </button>
+
+    <button class="frame-button" type="button">
+        <div class="frame-child">
+            <input class="password" type="password" placeholder="Password" id="password" name="password"/></div>
+    </button>
+
+    <button class="login1" id="headloginbutton" type="button">Login
+    </button
+    >
+    <button class="signup1" type="button">Signup
+    </button
+    >
+    <button class="home1" id="frameButton6" type="button">Home</button>
+    <div class="create-your-free">Create your free account</div>
+    <button class="rectangle-parent1" id="frameButton4">
+        <div class="frame-child1"></div>
+        <div class="get-started">Get Started</div>
+    </button>
+    <div class="already-have-an">Already have an account?</div>
+    <button class="rectangle-parent2" id="frameButton5" type="button">
+        <div class="frame-child2"></div>
+        <div class="login2">Login</div>
+    </button>
+</div>
+</form>
+<script>
+    var untitled12 = document.getElementById("untitled12");
+    if (untitled12) {
+        untitled12.addEventListener("click", function (e) {
+            window.location.href = "/";
+        });
+    }
+
+    var frameButton4 = document.getElementById("frameButton4");
+    if (frameButton4) {
+        frameButton4.addEventListener("click", function (e) {
+            // Please sync "Frame 1" to the project
+        });
+    }
+
+    var frameButton5 = document.getElementById("frameButton5");
+    if (frameButton5) {
+        frameButton5.addEventListener("click", function (e) {
+            window.location.href = "./Desktop2.html";
+        });
+    }
+
+    var headloginbutton = document.getElementById("headloginbutton");
+    if (headloginbutton) {
+        headloginbutton.addEventListener("click", function (e) {
+            window.location.href = "./Desktop2.html";
+        });
+    }
+
+    var frameButton6 = document.getElementById("frameButton6");
+    if (frameButton6) {
+        frameButton6.addEventListener("click", function (e) {
+            window.location.href = "./index.html";
+        });
+    }
+
+
+</script>
+</body>
+</html>
