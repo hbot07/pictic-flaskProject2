@@ -1,45 +1,9 @@
 import os
+import random
 
 from flask import Flask
 from flask import Flask, render_template, redirect, url_for, request
-
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'static/uploads/'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-
-
-# Check if the file has an allowed extension
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
-# Render the upload form
-@app.route('/upload')
-def upload_form():
-    return render_template('upload.html')
-
-
-# Handle the image upload
-@app.route('/upload', methods=['POST'])
-def upload_image():
-    # Get the form data
-    username = request.form['username']
-    title = request.form['title']
-    image = request.files['image']
-
-    # Check if the image file is valid
-    if image.filename == '':
-        return 'No selected file'
-
-    if not allowed_file(image.filename):
-        return 'Invalid file extension'
-
-    # Save the image to the upload folder
-    image.save(app.config['UPLOAD_FOLDER'] + image.filename)
-
-    # Render a success message
-    return 'Image successfully uploaded!'
 
 
 @app.route('/')
@@ -82,13 +46,41 @@ def signup():
 @app.route('/gallery')
 def gallery():
     images = []
+    gallery_length = 0
     for filename in os.listdir('static/uploads'):
+        if gallery_length > 49:
+            break
         if filename.endswith('.jpg') or filename.endswith('.png'):
             title, username = filename.split('_')[:-1]
             images.append({'filename': filename, 'title': title, 'username': username})
+            gallery_length += 1
     return render_template('gallery.html', images=images)
 
 
+app.config['UPLOAD_FOLDER'] = 'static/uploads/'
+
+
+@app.route('/upload', methods=['GET'])
+def upload():
+    return render_template('upload.html')
+
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    image = request.files['image']
+    username = request.form['username']
+    title = request.form['title']
+    ext = os.path.splitext(image.filename)[1]
+    filename = f"{title}_{username}_{random.randint(0, 100000)}{ext}"
+    image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    return redirect(url_for('view_image', filename=filename))
+
+
+@app.route('/images/<filename>')
+def view_image(filename):
+    title, username = filename.split('_')[:-1]
+    return render_template('image.html', title=title, filename=filename, username=username)
+
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

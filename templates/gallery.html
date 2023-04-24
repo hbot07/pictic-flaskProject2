@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Gallery</title>
-  </head>
-  <body>
-    <h1>Gallery</h1>
-    {% for image in images %}
-    <div>
-      <h2>{{ image.title }}</h2>
-      <img src="{{ url_for('static', filename='uploads/' + image.filename) }}" alt="{{ image.title }}">
-      <p>Uploaded by: {{ image.username }}</p>
-    </div>
-    {% endfor %}
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+    <main>
+        <div class="grid">
+            {% for image in images %}
+                <div class="grid-item">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='uploads/' + image.filename) }}" alt="{{ image.title }}">
+                        <div class="card-content">
+                            <h2>{{ image.title }}</h2>
+                            <p>Uploaded by {{ image.username }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
 </html>
