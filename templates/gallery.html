@@ -13,13 +13,15 @@
         <div class="grid">
             {% for image in images %}
                 <div class="grid-item">
-                    <div class="card">
-                        <img src="{{ url_for('static', filename='uploads/' + image.filename) }}" alt="{{ image.title }}">
-                        <div class="card-content">
-                            <h2>{{ image.title }}</h2>
-                            <p>Uploaded by {{ image.username }}</p>
+                    <a style="text-decoration: none" href="{{ url_for('view_image', filename=image.filename) }}">
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='uploads/' + image.filename) }}" alt="{{ image.title }}">
+                            <div class="card-content">
+                                <h2>{{ image.title }}</h2>
+                                <p>Uploaded by {{ image.username }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             {% endfor %}
         </div>
