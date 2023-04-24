@@ -50,7 +50,7 @@ def gallery():
     for filename in os.listdir('static/uploads'):
         if gallery_length > 49:
             break
-        if filename.endswith('.jpg') or filename.endswith('.png'):
+        if filename.endswith('.jpg') or filename.endswith('.png') or filename.endswith('.jpeg'):
             title, username = filename.split('_')[:-1]
             images.append({'filename': filename, 'title': title, 'username': username})
             gallery_length += 1

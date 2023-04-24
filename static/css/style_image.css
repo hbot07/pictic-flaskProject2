@@ -64,3 +64,37 @@ button:hover {
   background-color: #007bff;
   color: #fff;
 }
+
+.gallery-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.gallery-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.upload-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.upload-button:hover {
+    background-color: #000;
+    color: #fff;
+}
