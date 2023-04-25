@@ -81,6 +81,20 @@ def view_image(filename):
     title, username = filename.split('_')[:-1]
     return render_template('image.html', title=title, filename=filename, username=username)
 
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    if request.method == 'POST':
+        query = request.form['search']
+        images = []
+        for filename in os.listdir('static/uploads'):
+            if filename.endswith('.jpg') or filename.endswith('.png') or filename.endswith('.jpeg'):
+                title, _, _ = filename.rsplit('_', 2)
+                if query.lower() in title.lower():
+                    images.append({'filename': filename, 'title': title})
+        return render_template('search.html', query=query, images=images)
+    else:
+        return render_template('search.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
