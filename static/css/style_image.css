@@ -98,3 +98,21 @@ button:hover {
     background-color: #000;
     color: #fff;
 }
+
+.tags {
+    margin-top: 20px;
+}
+
+.tags a {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.tags a:hover {
+    background-color: #bbb;
+}
