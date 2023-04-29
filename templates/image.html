@@ -21,11 +21,12 @@
     <p>Uploaded by {{ username }}</p>
     <input type="text" value="{{ url_for('view_image', filename=filename, _external=True) }}" id="url" readonly style="border: 1px solid black;">
     <button onclick="copyToClipboard()">Copy URL to clipboard</button>
-    <div class="tags">
-        <p>Tags:</p>
-        {% for tag in tags %}
-            <a href="{{ url_for('tag', query=tag) }}">{{ tag }}</a>
-        {% endfor %}
+    <div class="tags-container">
+    <p>Tags:</p>
+    {% for tag in tags %}
+        <a href="{{ url_for('tag', query=tag) }}" class="tag">{{ tag }}</a>
+    {% endfor %}
     </div>
+
 </body>
 </html>

@@ -116,3 +116,29 @@ button:hover {
 .tags a:hover {
     background-color: #bbb;
 }
+
+.tags-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.tags-container p {
+    margin-right: 10px;
+}
+
+.tag {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #0062cc;
+}
+
