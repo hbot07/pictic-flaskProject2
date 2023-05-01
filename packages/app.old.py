@@ -74,7 +74,7 @@ def signup():
 def gallery():
     images = []
     gallery_length = 0
-    for filename in os.listdir('static/uploads'):
+    for filename in os.listdir('../static/uploads'):
         if gallery_length > 49:
             break
         if filename.endswith('.jpg') or filename.endswith('.png') or filename.endswith('.jpeg'):
@@ -116,7 +116,7 @@ def search():
     if request.method == 'POST':
         query = request.form['search']
         images = []
-        for filename in os.listdir('static/uploads'):
+        for filename in os.listdir('../static/uploads'):
             if filename.endswith('.jpg') or filename.endswith('.png') or filename.endswith('.jpeg'):
                 title, _, _ = filename.rsplit('_', 2)
                 if query.lower() in title.lower():

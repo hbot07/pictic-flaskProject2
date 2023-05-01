@@ -1,12 +1,13 @@
+import hashlib
 import os
 import random
+
 import mysql.connector
-import hashlib
 import tensorflow as tf
-from flask import Flask
-from flask import Flask, render_template, redirect, url_for, request
 from flask import Flask, render_template, request, redirect, url_for
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin, current_user
+from tensorflow.keras.applications.inception_v3 import decode_predictions
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
 app = Flask(__name__)
 app.secret_key = 'replace this with a more secure key'
@@ -146,6 +147,9 @@ def upload():
     return render_template('upload.html')
 
 
+model = tf.keras.applications.InceptionV3(include_top=True, weights='imagenet')
+
+
 @app.route('/upload', methods=['POST'])
 @login_required
 def upload_file():
@@ -156,9 +160,9 @@ def upload_file():
     filename = f"{title}_{username}_{random.randint(0, 100000)}{ext}"
     image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
     # ML TAGS
-    model = tf.keras.applications.InceptionV3(include_top=True, weights='imagenet')
+
     # InceptionV3 model trained on ImageNet dataset
-    from tensorflow.keras.preprocessing.image import load_img, img_to_array
+
     f = "static/uploads/" + filename
     img = load_img(f, target_size=(299, 299))
 
@@ -166,8 +170,6 @@ def upload_file():
     img_array = tf.keras.applications.inception_v3.preprocess_input(img_array)
 
     predictions = model.predict(img_array.reshape(1, 299, 299, 3))
-
-    from tensorflow.keras.applications.inception_v3 import decode_predictions
 
     decoded_predictions = decode_predictions(predictions, top=10)[0]
     tags = [tag[1] for tag in decoded_predictions]
@@ -225,6 +227,11 @@ def tag():
 def logout():
     logout_user()
     return redirect(url_for('login'))
+
+
+# @app.route('/myprofile')
+# def myprofile():
+#     return render_template('myprofile.html')
 
 
 if __name__ == '__main__':

@@ -142,3 +142,46 @@ button:hover {
     background-color: #0062cc;
 }
 
+.comments-container {
+    margin-top: 50px;
+}
+
+.comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.comment p:first-of-type {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comment p:last-of-type {
+    font-style: italic;
+    font-size: smaller;
+}
+
+.comments-container h2 {
+    margin-bottom: 20px;
+}
+
+.comments-container form {
+    margin-top: 20px;
+}
+
+.comments-container label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.comments-container input[type="text"], .comments-container textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.comments-container input[type="submit"] {
+    display: block;
+    margin-top: 10px;
+}

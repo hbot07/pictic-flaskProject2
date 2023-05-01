@@ -1,0 +1,3 @@
+[tool.poetry.scripts]
+# existing scripts
+pytest = "pytest"
