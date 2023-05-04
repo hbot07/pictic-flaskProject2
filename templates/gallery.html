@@ -9,10 +9,11 @@
     <header>
     <h1>Gallery</h1>
     <a href="{{ url_for('upload') }}" class="upload-button">Upload New Image</a>
+    <a href="{{ url_for('search') }}" class="search-button">Search</a>
     <form action="{{ url_for('logout') }}" method="get">
         <button type="submit" class="logout-button">Logout</button>
     </form>
-</header>
+    </header>
     <main>
         <div class="grid">
             {% for image in images %}

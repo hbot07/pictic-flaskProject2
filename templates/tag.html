@@ -2,24 +2,28 @@
 <html>
 <head>
     <title>Tag Search</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_search.css') }}">
-    <form action="{{ url_for('login') }}" method="get">
-        <button type="submit" class="logout-button">Logout</button>
-    </form>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_search.css') }}">
 </head>
 <body>
     <header>
-        <h1>Tag Search</h1>
+        <h1>View Images with Tag</h1>
         <nav>
             <ul>
                 <li><a href="{{ url_for('upload') }}">Upload New Image</a></li>
                 <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
             </ul>
         </nav>
     </header>
     <main>
+{#        <form method="post">#}
+{#            <div class="search-bar">#}
+{#                <input type="text" name="search" placeholder="Search by title" value="{{ query }}">#}
+{#                <button type="submit">Search</button>#}
+{#            </div>#}
+{#        </form>#}
         {% if images %}
-            <h2>Search results for "{{ query }}"</h2>
+            <h2 class="search-results">Images with tag "{{ query }}"</h2>
             <div class="grid">
                 {% for image in images %}
                     <div class="grid-item">
@@ -34,7 +38,7 @@
             </div>
         {% else %}
             {% if query %}
-                <p>No results found for "{{ query }}".</p>
+                <p class="no-results">No results found for "{{ query }}".</p>
             {% endif %}
         {% endif %}
     </main>
