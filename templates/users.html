@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .user-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .user-item {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Generate random background colors */
+        {% for user in users %}
+            .user-item-{{ loop.index }} {
+                background-color: {{ loop.index | generate_random_color }};
+            }
+        {% endfor %}
+    </style>
+</head>
+<body>
+    <h1>Users</h1>
+    <div class="user-list">
+        {% for user in users %}
+            <a href="{{ url_for('user_images', query=user[0]) }}">
+                <div class="user-item user-item-{{ loop.index }}">
+                    {{ user[0] }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</body>
+</html>

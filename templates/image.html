@@ -4,6 +4,7 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style_image.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_comments.css') }}">
     <script>
         function copyToClipboard() {
             var copyText = document.getElementById("url");
@@ -18,7 +19,7 @@
     <a href="{{ url_for('gallery') }}" class="gallery-button">Go to Gallery</a>
     <h1>{{ title }}</h1>
     <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="{{ title }}">
-    <p>Uploaded by {{ username }}</p>
+    <p>Uploaded by <a href="{{ url_for('user_images', query=username) }}" class="tag">{{ username }}</a></p>
     <input type="text" value="{{ url_for('view_image', filename=filename, _external=True) }}" id="url" readonly style="border: 1px solid black;">
     <button onclick="copyToClipboard()">Copy URL to clipboard</button>
     <div class="tags-container">
@@ -27,6 +28,19 @@
         <a href="{{ url_for('tag', query=tag) }}" class="tag">{{ tag }}</a>
     {% endfor %}
     </div>
+
+    <h2>Comments:</h2>
+    <ul>
+        {% for comment in comments %}
+            <li><b>{{ comment[1] }}</b> - {{ comment[2] }}</li>
+        {% endfor %}
+    </ul>
+
+    <form method="POST" action="{{ url_for('add_comment', filename=filename) }}">
+        <label for="comment">Comment:</label>
+        <textarea name="comment" id="comment" required></textarea>
+        <input type="submit" value="Add Comment">
+    </form>
 
 </body>
 </html>

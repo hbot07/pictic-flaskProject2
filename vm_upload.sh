@@ -1,0 +1,1 @@
+scp -r sql_keep_alive.py app.py static templates baadalvm@10.17.50.47:/home/baadalvm/pictic-flaskProject2/
